@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1{
+            font-size:36px;
+        }
+        h2{
+            font-size:24px;
+        }
+        p{
+            font-size:18px;
+        }
+        #skPlayer{
+
+        }
+        pre{
+            padding-left:2em;
+            font-size:16px;
+            line-height:24px;
+            color:#fff;
+            background-color:#272822;
+            border-radius:3px;
+        }
+        @media screen and (max-width:400px){
+            body{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="skPlayer"></div>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/api/skPlayer.min.js"></script>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/api/jquery-3.3.1.min.js"></script>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/js/path.js"></script>
+    <script>
+         const url = url_path+'GetMusicList';
+	 const indetify = identify = localStorage.getItem("identify");
+   	 $.post(
+       		 url,
+       		 {
+           		 identify:identify
+       		 },
+       		 function(data){
+		 var player = new skPlayer({
+           	 autoplay: false,
+           	 music: {
+               		 type: 'cloud',
+               		 source: data.result
+            		}	
+        	});
+       	 });
+    </script>
+</body>
+</html>

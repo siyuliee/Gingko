@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" content="Less is More">
+	<link rel="icon" href="https://www.gingko.tech/gingko/img/favicon.ico" type="image/x-ico">
+        <title>Gingko 一触及达</title>
+        <script type="application/javascript" src="https://www.gingko.tech/gingko/api/jquery-3.3.1.min.js"></script>
+        <link type="text/css" href="https://www.gingko.tech/gingko/css/gingko.css" rel="stylesheet">
+    </head>
+    <body id="content" background="img/1.jpg" style="overflow-y:auto">
+        <div id="head">
+            <a id="name_page">彩虹上的蒲公英</a>
+        </div>
+        <div id="login">
+            <center>
+                <input placeholder="Input Mail" type="text" class="input" id="mail">
+                <input placeholder="Input Passport" type="password" class="input" id="passport">
+                <input placeholder="NickName for Sign" type="text" class="input" id="nickname">
+            </center>
+            <div style="margin-top: 20px">
+                <div style="float: left;width: 50%;height: 20px"><center><button class="button" id="lgbutton">Login</button></center></div>
+                <div style="float: left;width: 50%;height: 20px;"><center><button class="button" id="sgbutton">Sign</button></center></div>
+            </div>
+        </div>
+        <div id="upload">
+            <center>
+                <input placeholder="Name" type="text" class="input" id="url_name">
+                <input placeholder="Url" type="text" class="input" id="url">
+                <input placeholder="Icon" type="file" class="input" id="image">
+            </center>
+            <div style="margin-top: 20px">
+                <div style="float: left;width: 50%;height: 20px"><center>
+                    <input type="radio" style="height: 30px;width: 20px;float: left;margin-left: 40px" name="search" value="bs" checked>
+                    <a style="float: left;padding-top: 5px">Life</a>
+                    <input type="radio" style="height: 30px;width: 20px;float: left" name="search" value="gs">
+                    <a style="float: left;padding-top: 5px">Edu</a>
+                </center></div>
+                <div style="float: left;width: 50%;height: 20px;"><center><button style="margin-top: 5px" class="button" id="send">Send</button></center></div>
+            </div>
+        </div>
+        <div id="right" style="overflow-style: marquee-line;overflow-y: auto">
+            <iframe id="music" src="https://www.gingko.tech/gingko/html/music.html" style="overflow-y: hidden;overflow-x: hidden"></iframe>
+            <hr>
+            <div id="clock">
+                <div class="clock" id="hour">12</div>
+                <div class="clock" style="width: 2%;padding-top: 10px" id="fen">:</div>
+                <div class="clock" id="minute">12</div>
+                <div class="clock" style="width: 2%;padding-top: 10px" id="fen1">:</div>
+                <div class="clock" id="second">12</div>
+                <hr style="width: 80%">
+                <div style="font-size: 20px;text-align: center;padding: 20px" id="date">2019-02-11 星期一</div>
+            </div>
+            <hr>
+            <div id="change" style="height: 230px">
+                <center>
+                    <a class="tittle" style="margin-top: 20px">音乐歌单设置</a>
+                    <div style="width: 100%">
+                        <div style="float: left;width: 50%">
+                            <input class="setting" id="musicList" placeholder="获取网易歌单id">
+                        </div>
+                        <div style="float: left;width: 50%">
+                            <button class="setting" id="changeMusic">确认</button>
+                        </div>
+                    </div>
+
+                    <a class="tittle">网页增删设置</a>
+                    <div style="width: 100%">
+                        <div style="float: left;width: 50%">
+                            <button class="setting" id="addUrl">添加网页</button>
+                        </div>
+                        <div style="float: left;width: 50%">
+                            <button class="setting" id="DeleteUrl">正常模式</button>
+                        </div>
+                    </div>
+
+                    <a class="tittle">用户昵称修改</a>
+                    <div>
+                        <div  style="float: left;width: 50%">
+                            <input class="setting" id="changeNickname">
+                        </div>
+                        <div style="float: left;width: 50%">
+                            <button class="setting" id="changeNick">确认修改</button>
+                        </div>
+                    </div>
+
+                    <a class="tittle" id="open_url_panel">搜索引擎设置&nbsp&nbsp<span style="background-color: rgba(235,235,235,0.6)">展开</span></a>
+                    <div style="width: 100%;display: none" id="panel">
+                        <div>
+                            <div>
+                                <a class="tittle">主搜索Enter</a>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="E" placeholder="主搜索空时,Enter直达">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="EB" onclick="engine('E')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="ES" placeholder="主搜索引擎,*代替关键字">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="ESB" onclick="engine('ES')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="ESC" placeholder="主搜索提示语">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="cue_ES" onclick="engine('ESC')">确认</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <div style="margin-top: 10px">
+                                <a class="tittle">左边搜索</a>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="B" placeholder="左边搜索空，Ctrl+B直达">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="BB" onclick="engine('B')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="BS" placeholder="左边搜索引擎">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="BSB" onclick="engine('BS')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="BSC" placeholder="左边搜索提示语">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="cue_BS" onclick="engine('BSC')">确认</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                            <div style="margin-top: 10px">
+                                <a class="tittle">右边搜索</a>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="G" placeholder="右边搜索，Ctrl+G直达">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="GB" onclick="engine('G')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="GS" placeholder="右边搜索引擎">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="GSB" onclick="engine('GS')">确认</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div  style="float: left;width: 60%;padding_top: 15px">
+                                    <input class="setting" id="GSC" placeholder="右边搜索提示语">
+                                </div>
+                                <div style="float: left;width: 40%;padding_top: 15px">
+                                    <button class="setting" id="cue_GS" onclick="engine('GSC')">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </center>
+            </div>
+            <div>
+                <center>
+                    <button class="setting" id="exit" style="margin-top: 20px;margin-bottom: 20px">退出</button>
+                </center>
+            </div>
+        </div>
+        <div style="width: 100%;height: 95%;background-color: aqua;margin-top: 10px">
+            <div id="left">
+                <div style="height: 15%;width: 100%">
+                    <center>
+                        <div style="width: 40%;height: 40px;border-radius: 15px;border: none;outline: none;">
+                            <center>
+                                <div>
+                                    <input placeholder="Google" id="Wuhan">
+                                </div>
+                                <div id="weather">
+                                    <center>
+                                        <label id="address" style="padding-top: 20px;font-family:Comic Sans MS"></label>
+                                        <br>
+                                        <label id="temp" style="font-family:Comic Sans MS"></label>
+                                    </center>
+                                </div>
+                            </center>
+                        </div>
+                    </center>
+                </div>
+                <div style="height: 75%;width: 49%;float: left">
+                    <div class="search bar3" style="margin-top: 90px">
+                        <center>
+                            <form>
+                                <input type="text" placeholder="百度学术" id="baidu">
+                                <button id="BSR" type="button"></button>
+                            </form>
+                        </center>
+                    </div>
+                    <div style="width: 100%">
+                        <table style="width: 100%" id="bs_tab" cellspacing="20">
+                        </table>
+                    </div>
+                </div>
+                <div style="height: 85%;width: 49%;float: right">
+                    <div class="search bar3" style="margin-top: 90px">
+                        <center>
+                            <form>
+                                <input type="text" placeholder="谷歌学术" id="google">
+                                <button id="GSR" type="button" onclick="Google"></button>
+                            </form>
+                        </center>
+                    </div>
+                    <div style="width: 100%">
+                        <table style="width: 100%" id="gs_tab" cellspacing="20">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="application/javascript" src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/js/path.js"></script>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/js/engine.js"></script>
+    <script type="application/javascript" src="https://www.gingko.tech/gingko/js/gingko.js"></script>
+    <script type="application/javascript">
+
+        var image_picture;
+        $(document).ready(function() {
+            document.getElementById("open_url_panel").addEventListener("click",function () {
+                $("#panel").toggle();
+            });
+            _addImgFileListener("#image", function(data) {
+                    image_picture = data;
+            });
+        })
+        function _addImgFileListener(obj, fun) {
+            $(obj).change(function() {
+                try {
+                    var file = this.files[0];
+                    var reader = new FileReader();
+                    reader.onload = function() {
+                        var img = new Image();
+                        img.src = reader.result;
+                        img.onload = function() {
+                            var w = img.width,
+                                h = img.height;
+                            var canvas = document.createElement('canvas');
+                            var ctx = canvas.getContext('2d');
+                            $(canvas).attr({
+                                width: w,
+                                height: h
+                            });
+                            ctx.drawImage(img, 0, 0, w, h);
+                            var base64 = canvas.toDataURL('image/jpeg', 0.5);
+                            var result = base64;
+                            fun(result);
+                        }
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                } catch(e) {
+                    _showMsg(e);
+                }
+            });
+        }
+    </script>
+</html>
