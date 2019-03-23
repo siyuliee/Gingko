@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>api.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Sign</servlet-name>
+    <servlet-class>api.Sign</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUrl</servlet-name>
+    <servlet-class>api.AddUrl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateMusic</servlet-name>
+    <servlet-class>api.UpdateMusic</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetUrl</servlet-name>
+    <servlet-class>api.GetUrl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteUrl</servlet-name>
+    <servlet-class>api.DeleteUrl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateNickname</servlet-name>
+    <servlet-class>api.UpdateNickname</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetMusicList</servlet-name>
+    <servlet-class>api.GetMusicList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MusicList</servlet-name>
+    <servlet-class>api.MusicList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Music</servlet-name>
+    <servlet-class>api.Music</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Engine</servlet-name>
+    <servlet-class>api.Engine</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SetEngine</servlet-name>
+    <servlet-class>api.SetEngine</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/servlet/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Sign</servlet-name>
+    <url-pattern>/servlet/Sign</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUrl</servlet-name>
+    <url-pattern>/servlet/AddUrl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateMusic</servlet-name>
+    <url-pattern>/servlet/UpdateMusic</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetUrl</servlet-name>
+    <url-pattern>/servlet/GetUrl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUrl</servlet-name>
+    <url-pattern>/servlet/DeleteUrl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateNickname</servlet-name>
+    <url-pattern>/servlet/UpdateNickname</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetMusicList</servlet-name>
+    <url-pattern>/servlet/GetMusicList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MusicList</servlet-name>
+    <url-pattern>/servlet/MusicList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Music</servlet-name>
+    <url-pattern>/servlet/Music</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Engine</servlet-name>
+    <url-pattern>/servlet/Engine</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SetEngine</servlet-name>
+    <url-pattern>/servlet/SetEngine</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
